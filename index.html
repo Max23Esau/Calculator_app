@@ -1,26 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-
+  <main class="container">
+    <header class="application__header">
+      <div class="header__title">calc</div>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="header__themes">
+        <div class="themes__position">
+          <span class="position">1</span>
+          <span class="position">2</span>
+          <span class="position">3</span>
+        </div>
+        
+        <div class="themes__slider">
+          <label for="slider" class="slider__label">THEME</label>
+          <input type="range" name="slider" min="1" max="3" id="slider" class="slider">
+        </div>
+      </div>
+  
+    </header>
+
+    <section class="container-result" id="result">
+      <div class="container-operation" id="screen"></div>
+    </section>
+
+    <section class="container-keyboard" id="buttons">
+        <button class="math-symbol" data-key="7">7</button>
+        <button class="math-symbol" data-key="8">8</button>
+        <button class="math-symbol" data-key="9">9</button>
+        <button class="math-symbol del" data-key="clear">del</button>
+        <button class="math-symbol" data-key="4">4</button>
+        <button class="math-symbol" data-key="5">5</button>
+        <button class="math-symbol" data-key="6">6</button>
+        <button class="math-symbol" data-key="+">+</button>
+        <button class="math-symbol" data-key="1">1</button>
+        <button class="math-symbol" data-key="2">2</button>
+        <button class="math-symbol" data-key="3">3</button>
+        <button class="math-symbol" data-key="-">-</button>
+        <button class="math-symbol" data-key=".">.</button>
+        <button class="math-symbol" data-key="0">0</button>
+        <button class="math-symbol" data-key="/">/</button>
+        <button class="math-symbol"  data-key="*">*</button>
+        <button class="math-symbol reset" data-key="clear">reset</button>
+        <button class="math-symbol button-equal" data-key="equal">=</button>
+    </section>
+
+    <script src="./index.js"></script>
+  </main>
 </body>
 </html>
