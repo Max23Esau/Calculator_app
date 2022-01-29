@@ -1,9 +1,8 @@
 let screen = document.getElementById('screen');
 const buttons = document.querySelectorAll("#buttons button");
-let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', '+', '-', '/', '*', '=', 'Backspace', 'Enter', ' ' ]
+let teclas = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', '+', '-', '/', '*', '=', 'Backspace', 'Enter', ' ' ]
 
 function operacion(argument){
-	console.log(argument);
 	let button = argument;
 
 	if (button === 'x') {
@@ -33,11 +32,9 @@ for (const btn of buttons) {
 	};
 } 
 
-
-
 document.addEventListener('keydown', (event) => {
 	let keyValue = event.key;
-	if(numbers.includes(keyValue)){	
+	if(teclas.includes(keyValue)){	
 		if (keyValue === 'Enter') {
 			keyValue = '='
 		} else if (keyValue === 'Backspace') {
