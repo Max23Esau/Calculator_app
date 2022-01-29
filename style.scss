@@ -56,10 +56,11 @@ html[data-theme="purple"] {
   --whiteButtons: hsl(0, 0%, 100%);
 }
 .container {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 550px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 2em;
   box-sizing: border-box;
   &-header {
     background-color: transparent;
@@ -128,7 +129,7 @@ html[data-theme="purple"] {
   .application__header {
     width: 100%;
     left: 7.3rem;
-    margin-bottom: 40px;
+    margin: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

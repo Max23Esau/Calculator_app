@@ -56,10 +56,11 @@ html[data-theme="purple"] {
 }
 
 .container {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 550px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 2em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -155,7 +156,7 @@ html[data-theme="purple"] {
 .container .application__header {
   width: 100%;
   left: 7.3rem;
-  margin-bottom: 40px;
+  margin: 40px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
