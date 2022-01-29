@@ -3,7 +3,7 @@ const themeSelected = document.getElementById("slider")
 function defaultTheme (htmlTag) {
   htmlTag.setAttribute('data-theme', 'dark')
   window.localStorage.setItem('site-theme', 'dark')
-  window.localStorage.setItem('slider-val', '2')
+  window.localStorage.setItem('slider-val', '1')
 }
 
 function toggleTheme () {
@@ -12,12 +12,12 @@ function toggleTheme () {
 
   switch(themeNum) {
     case "1":
-      htmlTag.setAttribute('data-theme', 'light')
-      window.localStorage.setItem("site-theme", "light")
-      window.localStorage.setItem("slider-val", "1")
+      defaultTheme(htmlTag)
       break;
     case "2":
-      defaultTheme(htmlTag)
+      htmlTag.setAttribute('data-theme', 'light')
+      window.localStorage.setItem("site-theme", "light")
+      window.localStorage.setItem("slider-val", "2")
       break;
     case "3":
       htmlTag.setAttribute('data-theme', 'purple')

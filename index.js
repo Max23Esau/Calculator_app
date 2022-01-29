@@ -1,37 +1,49 @@
 let screen = document.getElementById('screen');
-// let result = document.getElementById('result');
 const buttons = document.querySelectorAll("#buttons button");
+let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', '+', '-', '/', '*', '=', 'Backspace', 'Enter', ' ' ]
 
+function operacion(argument){
+	console.log(argument);
+	let button = argument;
 
+	if (button === 'x') {
+		button = '*'
+	}
 
-for (const button of buttons) {
-	button.addEventListener('click', function(e) {
-			e.preventDefault();
-			
-			if (e.target.dataset.key == 'equal') {
-				screen.textContent = eval(screen.textContent);
-				
-				if (screen.textContent.length > 8) {
-					screen.textContent = eval(screen.textContent).toFixed(8);
-				}
-				} else if (e.target.dataset.key == 'reset') {
-					screen.textContent = '';
-				} else if (e.target.dataset.key == 'clear') {
-					let clear = screen.textContent.split('');
-					clear.pop()
-					screen.textContent = clear.join('');
-				} else {
-					screen.textContent = screen.textContent + e.target.dataset.key;
-				}   
-	});
+	if (button == '=') {
+		screen.textContent = eval(screen.textContent);
+		if (screen.textContent.length > 8) {
+			screen.textContent = eval(screen.textContent).toFixed(8);
+		}
+	} else if (button == 'reset' || button == ' ') {
+		screen.textContent = '0';
+	} else if (button == 'del') {
+		let clear = screen.textContent.split('');
+		clear.pop()
+		screen.textContent = clear.join('');
+	} else {
+		screen.textContent = screen.textContent + button;
+	}   
 }
+
+
+for (const btn of buttons) {
+	btn.onclick = function() {
+		operacion(btn.textContent)
+	};
+} 
 
 
 
 document.addEventListener('keydown', (event) => {
-    var keyValue = event.key;
-    var codeValue = event.code;
-  
-    console.log(keyValue);
-    console.log(codeValue);
-  }, false);
+	let keyValue = event.key;
+	if(numbers.includes(keyValue)){	
+		if (keyValue === 'Enter') {
+			keyValue = '='
+		} else if (keyValue === 'Backspace') {
+			keyValue = 'del'
+		}
+		operacion(keyValue)
+	}
+	
+});
