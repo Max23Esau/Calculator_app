@@ -17,4 +17,4 @@ The challenge is to build a calculator app and get it looking as close to the de
 - JavaScript
 
 ## Deploy in Vercel 
-- [View the preview]() 🚀
+- [View the preview](https://calculator-app-i8ulkhgx6-max23esau.vercel.app/) 🚀
